@@ -1,0 +1,6 @@
+{
+    "model": "./runs/detect/merged-apples-v9e/weights/best.pt",
+    "data": "../data/th-leaveout-merged-wsu/data.yaml",
+    "name": "merged-apples-thlo-merged-wsu-v9e",
+    "epochs": 300
+}

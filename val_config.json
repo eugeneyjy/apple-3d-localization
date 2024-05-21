@@ -1,0 +1,9 @@
+{
+    "model": "../apple-localization/runs/detect/merged-apples-thlo-merged-wsu/weights/best.pt",
+    "data": "../data/th-leaveout-merged-wsu/data.yaml",
+    "split": "test",
+    "project": "./runs/detect",
+    "batch": 1,
+    "iou": 0.6,
+    "conf": 0.4
+}

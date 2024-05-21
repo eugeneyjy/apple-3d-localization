@@ -1,0 +1,9 @@
+{
+    "model": "./runs/detect/merged-apples-thlo-merged-wsu/weights/best.pt",
+    "folder": "../data/th-leaveout-merged-wsu/test/images",
+    "n_images": 10,
+    "random": false,
+    "project": "./runs/detect",
+    "iou": 0.6,
+    "conf": 0.4
+}
