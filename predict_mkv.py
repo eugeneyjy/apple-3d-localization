@@ -7,17 +7,28 @@ import torch
 from ultralytics import YOLO
 from pyk4a import PyK4APlayback
 
+# Function to get {x,y} index inside a 2D depth arr that associate with the median depth
+# i.e. arr[median_y, median_x] == median of arr
 def argmedian(arr: np.ndarray):
-    if not arr.any():
+    # Store original indices of the arr
+    ori_inds = np.arange(arr.size)
+    
+    # Store the indices of depth > 0 in the original array
+    filtered_ori_inds = ori_inds[arr.flatten() > 0]
+    # Get only elements with depth > 0 from the original array
+    filtered_depth = arr[arr > 0]
+
+    # If all depth is <= 0, return None
+    if filtered_depth.size == 0:
         return None
-    mid = arr.size//2
-    flat_median = np.argpartition(arr, mid, axis=None)[mid]
-    while mid < arr.size:
-        median_y, median_x = np.unravel_index(flat_median, arr.shape)
-        if arr[median_y][median_x] == 0:
-            mid += 1
-        else:
-            break
+    
+    mid = filtered_depth.size//2
+    # Get median of depth > 0
+    filtered_median_idx = np.argpartition(filtered_depth, mid, axis=None)[mid]
+    # Get the flatten original index
+    ori_median_idx = filtered_ori_inds[filtered_median_idx]
+    # Convert flatten index back to {x,y} indicies
+    median_y, median_x = np.unravel_index(ori_median_idx, arr.shape)
     return median_x, median_y
 
 if __name__ == "__main__":
