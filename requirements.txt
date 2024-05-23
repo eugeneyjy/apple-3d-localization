@@ -1,0 +1,2 @@
+ultralytics>=8.2.19
+pyk4a>=1.5.0
