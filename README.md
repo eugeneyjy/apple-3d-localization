@@ -18,6 +18,9 @@ Project that train YOLO detection models on depth thresholded images to obtain r
 ## Example
 ![demo](https://github.com/eugeneyjy/apple-3d-localization/assets/46506744/aed62b9a-3c05-47c5-bbe4-a0f36ae731bb)
 
+## Install Prerequisites
+Follow guide on [pyk4a](https://github.com/etiennedub/pyk4a) and install [Azure SDK](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/blob/develop/docs/usage.md  )
+
 ## Dataset
 https://universe.roboflow.com/apple-detection-localization
 
